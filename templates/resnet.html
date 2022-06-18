@@ -1,0 +1,50 @@
+
+{% extends "base.html" %}
+
+ {% block title %} resnet {% endblock %}
+
+
+   {% block content %}
+<style>
+
+</style>
+
+
+     <center>
+         <h1>Resnet Model</h1>
+     <form class="form-horizontal" action="/resnet_form" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-5" for="pwd">Upload Your Image :</label>
+      <div class="col-lg-6">
+        <input type="file" class="form-control" placeholder="Hours Studied"  required name="my_image" id="pwd">
+        {{ msg }}
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-6 col-sm-4">
+        <button style="width:80px;height:30px;padding:0px 10px;" type="submit" class=" btn-primary">Predict</button>
+      </div>
+    </div>
+  </form><br>
+
+	{% if prediction %}
+  <img src="{{img_path}}" height="250px;" width="30%"><br>
+	<h2>  Prediction   : <b> {{prediction}} </b></h2>
+         <h2> Accuracy   : <b> {{acc}} </b></h2>
+
+	{% endif %}
+
+
+     </center>
+
+
+{% endblock %}
+
+
+
+
+
+
+
